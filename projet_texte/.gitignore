@@ -1,0 +1,8 @@
+__pycache__
+Results/
+Results_old/
+GENOME_REPORTS/
+build/
+dist/
+main.spec
+NC_done.log

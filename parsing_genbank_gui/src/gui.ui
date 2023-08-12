@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>200</x>
+    <y>0</y>
+    <width>900</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Projet Bio Informatique [groupe SDSC]</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1">
+     <widget class="QProgressBar" name="progressBar_2">
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Arborescence du site GenBank :</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="frame_2">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>choix régions fonctionnelles :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="2">
+         <widget class="QTextEdit" name="textEdit">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QPushButton" name="downloadButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Téléchargement des données</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QProgressBar" name="progressBar">
+          <property name="value">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="combobox">
+          <item>
+           <property name="text">
+            <string>Toutes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CDS</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>centromere</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>intron</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>mobile_element</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ncRNA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>rRNA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>telomere</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>tRNA</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3'UTR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5'UTR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Région libre [à faire encore]</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Informations :</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>895</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menumenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionDarkMode"/>
+    <addaction name="actionR_soudre_les_Probl_mes"/>
+    <addaction name="emptyCache"/>
+   </widget>
+   <addaction name="menumenu"/>
+  </widget>
+  <action name="recharger">
+   <property name="text">
+    <string>Rechargement</string>
+   </property>
+  </action>
+  <action name="emptyCache">
+   <property name="text">
+    <string>Réinitialisation </string>
+   </property>
+  </action>
+  <action name="actionDark_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark Mode</string>
+   </property>
+  </action>
+  <action name="actionDarkMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark Mode</string>
+   </property>
+  </action>
+  <action name="actionR_soudre_les_Probl_mes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Résoudre les Problèmes</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

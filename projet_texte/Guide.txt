@@ -1,0 +1,19 @@
+#### Execution
+Pour lancer notre programme sous windows, il suffit de double-cliquer sur l'éxécutable.
+
+Il est aussi possible de l'éxécuter via une invite de commande avec l'instruction suivante:
+python3 main.py 
+
+#### Explication rapide du fonctionnement de notre programme
+Dans un premier temps, le programme télécharge les fichiers overview.txt, Archaea.ids, Bacteria.ids, Eukaryota.ids, Viruses.ids afin de regrouper les nc à traiter par kingdom.
+Ensuite il va créer toute l'arboresence en amont. Actuellement, il est seulement possible via l'interface d'extraire les génomes en fonction du kingdom et non à un niveau inférieur.
+Le programme traite aussi la sélection des  régions à extraire.
+Comme, notre programme parse par kingdom, il fait tout d'abord un tri des organismes en fonction de leur groupe et sous groupe. Du coup, le programme parse les génomes dossier par dossier dans l'ordre alphabétique et cela s'applique est aussi valable pour les sous groupes.
+
+Pour éviter de parser deux fois le même fichier, le programme vérifie tout d'abord l'existence du fichier dans l'arboresence. Si le fichier existe déjà alors il l'ignore sinon il le parse.
+Remarque: Si dans un premier temps, on choisit seulement la région CDS et qu'ensuite on décide d'ajouter les introns. Alors le programme lira de nouveau les nc déjà traités mais en ajoutant seulement 
+les nouveaux fichiers correspondant à la région intron. Il ne mettre pas à jour les fichiers CDS déjà existant.
+
+#### Problème à signaler
+Dans l'interface, lorsqu'on décide de stopper le programme avec le bouton Stop le programme va d'abord finir sa lecture en cours avant de s'arrêter. C'est pourquoi, il peut arriver que
+le programme prenne un peu de temps avant de pouvoir relancer.

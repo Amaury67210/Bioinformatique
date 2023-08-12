@@ -1,0 +1,11 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file alias ="cross">icon/times.svg</file>
+    <file alias ="cross-dark">icon/times-dark.png</file>
+    <file alias ="check" >icon/check-mark.svg</file>
+    <file alias ="check-dark" >icon/check-mark-dark.png</file>
+    <file alias ="exclamation" >icon/exclamation.svg</file>
+    <file alias ="exclamation-dark" >icon/exclamation-dark.png</file>
+</qresource>
+</RCC>
+

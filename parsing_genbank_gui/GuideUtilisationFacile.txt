@@ -1,0 +1,51 @@
+#### Execution
+Pour lancer notre programme sous windows, il suffit de double-cliquer sur l'éxécutable Genbank_gui.
+
+Pour exécuter en ligne de commande sur linux (ou mac os), ouvrir un terminal dans le dossier courant (parsing_genbak_gui) et exécuter
+les instructions suivantes : 
+
+pip install -e . 
+python3 src/main.py 
+
+#### Fonctionnalités avec l'API Genbank
+
+Il est possible de charger les informations à propos de :
+- tous les organismes contenus dans le fichier overview.txt
+- un groupe d'organisme contenu dans l'arborescence
+- un seul organisme 
+Et pour chaque option on peut choisir de sélectionner toutes les régions fonctionnelles ou seulement une de notre choix.
+
+Pour cela, nous avons le bouton "Fetch_Parse_All" qui va chercher les informations sur tous les organismes.
+
+Ensuite, dans l'arborescence à gauche, on peut regarder ce qui se trouve dans les différents royaumes en cliquant sur la petite flèche à gauche du nom ou en double cliquant sur le nom. 
+Quand on clique sur un nom de groupe ou d'organisme il devient bleu, et on peut cliquer sur le bouton "Fetch And Parse" à droite pour charger les informations d'uniquement ce groupe/organisme.
+On peut aussi sélectionner la région fonctionnelle qu'on souhaite avant de cliquer sur ce bouton. Pour cela il faut la choisir dans le volet déroulant juste au dessus du bouton. Par défaut on va sélectionner "Toutes". 
+
+La barre de progression indique l'état de progression d'un ensemble de valeurs de NCs demandés à l'API.
+Elle arrive à 100% lorsqu'elle atteint un certains nombre de données reçues; elle est scueptible d'avoir un
+nouveau téléchargement qui est lancé à la suite, signifiant que les données ont été séparés en batch pour qu'elles
+soient fournies de manière optimisée à l'API. 
+
+#### Fonctionnalités autres
+
+Quand on a finit de charger les organismes et régions qui nous intéressent, on peut les exporter dans l'emplacement de notre choix grâce à "File" -> "Exporter" en haut à gauche.
+
+Nous avons aussi un système de cache. Vous n'êtes pas sans savoir que les requêtes avec l'API Genbank sont très longues car nous sommes limités à une certaine fréquence de requête. Nous trouvions donc dommage, dans le cas où l'on souhaite avoir seulement une région fonctionnelle, de parser tout le fichier fasta mais de jeter ce qui ne nous intéresse pas pour le moment. Nous stockons donc toutes les informations dans un cache. 
+Il est possible de le vider dans "File" -> "Vider le cache". Cela supprime entièrement le dossier .cache_Genbank, ce qui réinitialise l'application. 
+Il faudra télécharger de nouveau les données pour pouvoir utiliser l'application. 
+
+
+#### Affichage
+
+Nous avons aussi implémenté un dark mode. Pour y accéder, il faut aller dans "Affichage" en haut à droite et cliquer sur "Dark Mode", la croix va alors se cocher et la fenêtre va passer en fond noir.
+
+Dans l'arborescence à gauche, à côté de chaque nom d'organisme il y a une icone : une croix ou un symbole check suivant si l'organisme a été chargé ou non.
+Dans le cadre à droite est affiché ce que fait l'application en temps réel : ce que fait l'application, 
+les messages d'erreurs et les avertissements. 
+
+#### Améliorations à faire
+
+Lorsqu'on clique sur Fetch and Parse sur un groupe d'organisme (et non pas un seul organisme) l'affichage graphique
+qui affiche une un check vert ne se fait pas sur les sous-organismes du groupe mais seulement sur le groupe en soi.
+Si l'utilisateur clique sur l'organisme pour le télécharger, il sera tout de même télecharger instantanément puiqu'il
+à déjà été traité est gardé en mémoire dans le cache. 

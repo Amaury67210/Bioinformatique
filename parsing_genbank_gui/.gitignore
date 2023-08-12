@@ -1,0 +1,10 @@
+data
+venv
+__pycache__
+Genbank/
+ncbi/
+bio_parsing.egg-info/
+.idea/
+pre_GeneBank/
+.nb_of_ncs
+.cache_Genbank/
